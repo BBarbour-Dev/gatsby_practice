@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Practice Blog`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -13,6 +13,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `pages`,
+          path: `${__dirname}/src/pages/`,
+        },
+      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -30,5 +37,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    'gatsby-plugin-catch-links',
+    'gatsby-transformer-remark',
   ],
 }
